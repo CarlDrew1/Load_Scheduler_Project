@@ -4,11 +4,12 @@ from django.views.generic import CreateView, ListView, DetailView, UpdateView, D
 from django.contrib.auth.forms import UserCreationForm
 from .models import Runs
 from django.contrib.auth import authenticate, login
+from .filters import filter_runs
 
 
 
 def home(request):
-    return render(request, 'Runs/delete.html')
+    return render(request, 'Runs/home.html')
 
 
 class SignUp(CreateView):
@@ -39,12 +40,17 @@ class create_run(CreateView):
 class detail_run(ListView):
     model = Runs
     runset = Runs.objects.all()
-    template_name ='Runs/detail.html'   
+    template_name ='Runs/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] =   filter_runs(self.request.GET, queryset=self.get_queryset())
+        return context
 
 class update_run(UpdateView):
     model = Runs
     template_name ='Runs/update.html' 
-    fields = ['run','driver', 'truck','trailer_1', 'trailer_2', 'load_comments', 'return_load_comments','depart_date','depart_time']
+    fields = ['run','driver', 'truck','trailer_1', 'trailer_2', 'load_comments', 'return_load_comments','depart_date','depart_time','planned_depart_time']
     success_url =   reverse_lazy('detail_run')
 
     
@@ -52,4 +58,8 @@ class delete_run(DeleteView):
     model = Runs
     template_name ='Runs/delete.html' 
     success_url =   reverse_lazy('detail_run')
+
+
+
+
 

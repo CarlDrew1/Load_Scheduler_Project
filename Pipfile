@@ -11,6 +11,7 @@ django-crispy-forms = "*"
 django-bootstrap4 = "*"
 django-bootstrap-datepicker-plus = "*"
 pylint-django = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"

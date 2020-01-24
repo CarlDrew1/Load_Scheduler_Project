@@ -10,13 +10,18 @@
 
     <h1 class="text-center">Day Planner Summary</h1>
     <br>
-   
 
+    <form action="" method="get">
+    {{filter.form.as_p}}
+    <button type="submit" class="btn btn-primary p-2">Search</button>
+    </form>
+    <br>
 
     <table class="table">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Depart Date</th>
+            <th scope="col">Planned Depart Time</th>
             <th scope="col">Depart Time</th>
             <th scope="col">Run</th>
             <th scope="col">Driver</th>
@@ -29,9 +34,10 @@
           </tr>
         </thead>
         <tbody>
-            {% for run in object_list %}
+            {% for run in filter.qs %}
           <tr>
             <th scope="row">{{ run.depart_date }}</th>
+            <td>{{ run.planned_depart_time }}</td>
             <td>{{ run.depart_time }}</td>
             <td>{{ run.run }}</td>
             <td>{{ run.driver }}</td>
@@ -41,7 +47,7 @@
             <td>{{ run.load_comments }}</td>
             <td>{{ run.return_load_comments }}</td>
             {% if user.is_authenticated %}
-            <td><a href="{% url 'delete_run' run.id %}" class="btn btn-danger">Delete</a> <a href="{% url 'update_run' run.id %}" class="btn btn-primary">Update</a></td>
+            <td><a href="{% url 'update_run' run.id %}" class="btn btn-primary">Update</a> <a href="{% url 'delete_run' run.id %}" class="btn btn-danger">Delete</a> </td>
             {% endif %}
           </tr>
           {% endfor %}

@@ -14,3 +14,4 @@ class Runs(models.Model):
     depart_time = models.TimeField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     objects = models.Manager()
+    Planned_depart_time = models.TimeField()
