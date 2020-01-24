@@ -1,5 +1,5 @@
 {% extends 'Runs/base.html' %}
-
+{% load static %}
 
 {% block content %}
 
@@ -40,15 +40,20 @@
             <td>{{ run.trailer_2 }}</td>
             <td>{{ run.load_comments }}</td>
             <td>{{ run.return_load_comments }}</td>
+            {% if user.is_authenticated %}
             <td><a href="{% url 'delete_run' run.id %}" class="btn btn-danger">Delete</a> <a href="{% url 'update_run' run.id %}" class="btn btn-primary">Update</a></td>
+            {% endif %}
           </tr>
           {% endfor %}
         </tbody>
       </table>
 
-
+      
 
 </div>
 
+    <div class="d-flex justify-content-center">
+        <img class='mr-3 align-self-center' src="{% static 'images.jpg' %}" alt="">
+    </div>
 
 {% endblock content %}
