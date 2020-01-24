@@ -1,0 +1,54 @@
+{% extends 'Runs/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class=" container-fluid pt-5">
+<form action="" method="post">
+{% csrf_token %}
+
+<div class="row">
+    <div class="col-2">
+      <input id='departdate' name='depart_date' placeholder="Depart Date"></input>
+    </div>
+    <div class="col-2">
+      <input id='departtime' name='depart_time'placeholder="Depart Time" ></input>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-2">
+      {{ form.run|as_crispy_field }}
+    </div>
+    <div class="col-2">
+      {{ form.driver|as_crispy_field }}
+    </div>
+    <div class="col-2">
+        {{ form.truck|as_crispy_field }}
+    </div>
+    <div class="col-2">
+        {{ form.trailer_1|as_crispy_field }}
+    </div>
+    <div class="col-2">
+        {{ form.trailer_2|as_crispy_field }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+      {{ form.load_comments|as_crispy_field }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+      {{ form.return_load_comments|as_crispy_field }}
+    </div>
+</div>  
+<br>
+<input type='submit' value="Create Run" class='btn btn-primary'>
+</form>
+</div>
+
+
+{% endblock content %}

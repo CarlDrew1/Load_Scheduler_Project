@@ -1,0 +1,15 @@
+{
+    "python.pythonPath": "C:\\Users\\Carl\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+ 
+ 
+    
+        
+        
+        
+}
