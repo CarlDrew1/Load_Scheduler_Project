@@ -47,6 +47,9 @@ class detail_run(ListView):
         context['filter'] =   filter_runs(self.request.GET, queryset=self.get_queryset())
         return context
 
+    def permit(self):
+        pass
+
 class update_run(UpdateView):
     model = Runs
     template_name ='Runs/update.html' 
