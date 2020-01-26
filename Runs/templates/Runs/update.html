@@ -9,23 +9,19 @@
     <h3>Upate Run</h3>
 <form action="" method="post">
 {% csrf_token %}
+  <div class="row">
+    <div class="col-2">
+        {{ form.depart_date|as_crispy_field }}
+    </div>
+    <div class="col-2">
+        {{ form.Planned_depart_time|as_crispy_field }}
+    </div>
+  </div>
+  
+
 
 <div class="row">
-    <div class="col-2">
-      <input id='departdate' name='depart_date' placeholder="Depart Date"></input>
-    </div>
-    <div class="col-2">
-      <input id='departtime' name='depart_time'placeholder="Depart Time" ></input>
-    </div>
-     <div class="col-2">
-      <input id='departtime2' name='depart_time'placeholder="Depart Time" ></input>
-    </div>
-</div>
-<br>
-<div class="row">
-    <div class="col-2">
-      {{ form.depart_date|as_crispy_field }}
-    </div>
+
     <div class="col-2">
       {{ form.run|as_crispy_field }}
     </div>

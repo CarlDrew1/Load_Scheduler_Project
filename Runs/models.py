@@ -7,7 +7,7 @@ class Runs(models.Model):
     driver = models.CharField(max_length=50)
     truck = models.CharField(max_length=50)
     trailer_1 = models.CharField(max_length=50)
-    trailer_2 = models.CharField(max_length=50)
+    trailer_2 = models.CharField(max_length=50, null=True)
     load_comments = models.CharField(max_length=255)
     return_load_comments = models.CharField(max_length=255)
     depart_date = models.DateField()
