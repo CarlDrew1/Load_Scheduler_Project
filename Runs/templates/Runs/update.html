@@ -5,10 +5,21 @@
 {% block content %}
 
 
-<div class=" container-fluid pt-5">
-    <h3>Upate Run</h3>
+<div class=" container pt-3">
+  <h1 class="p-3">Update a Run</h1>
+
 <form action="" method="post">
 {% csrf_token %}
+
+
+<div class="row">
+  <div class="col-2">
+      {{ form.depart_time|as_crispy_field }}
+  </div>
+  
+</div>
+
+
   <div class="row">
     <div class="col-2">
         {{ form.depart_date|as_crispy_field }}

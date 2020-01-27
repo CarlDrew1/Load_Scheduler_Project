@@ -8,11 +8,12 @@ from django import forms
 
 class filter_runs(django_filters.FilterSet):
     depart_date = django_filters.DateFilter(
-    lookup_expr='icontains',
+    
     widget=forms.DateInput(
         attrs={
             'id': 'date',
-            'type': 'text'
+            'type': 'text',
+            'place holder': 'Depart Date',
         }
     )
     )

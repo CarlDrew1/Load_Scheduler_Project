@@ -15,6 +15,7 @@ pylint-django = "*"
 django-filter = "*"
 pandas = "*"
 django-pandas = "*"
+django-widget-tweaks = "*"
 
 [requires]
 python_version = "3.7"

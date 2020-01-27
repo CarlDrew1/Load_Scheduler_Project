@@ -5,7 +5,8 @@
 {% block content %}
 
 
-<div class=" container-fluid pt-5">
+<div class=" container pt-3">
+  <h1 class="p-3">Create a new Run</h1>
 <form action="" method="post">
 {% csrf_token %}
 
@@ -15,10 +16,11 @@
     </div>
     <div class="col-2">
       <input id='departtime2' name='Planned_depart_time'placeholder="Planned Depart Time" ></input>
-  </div>
-    
-    
-    
+    </div>
+    <div class="col-2">
+      <input id='departtime' name='depart_time'placeholder="Depart Time" ></input>
+    </div>
+      
 </div>
 <br>
 <div class="row">
@@ -39,12 +41,12 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12">
+    <div class="col-8">
       {{ form.load_comments|as_crispy_field }}
     </div>
 </div>
 <div class="row">
-    <div class="col-12">
+    <div class="col-8">
       {{ form.return_load_comments|as_crispy_field }}
     </div>
 </div>  
@@ -52,7 +54,5 @@
 <input type='submit' value="Create Run" class='btn btn-primary'>
 </form>
 </div>
-
-
 
 {% endblock content %}

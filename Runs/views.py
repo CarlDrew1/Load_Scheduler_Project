@@ -5,6 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Runs
 from django.contrib.auth import authenticate, login
 from .filters import filter_runs
+from .permit import permit
+from django.utils import timezone
 
 
 
@@ -44,11 +46,9 @@ class detail_run(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['filter'] =   filter_runs(self.request.GET, queryset=self.get_queryset())
-        return context
-
-    def permit(self):
-        pass
+        context['filter'] = filter_runs(self.request.GET, queryset=self.get_queryset())
+        return context   
+        
 
 class update_run(UpdateView):
     model = Runs

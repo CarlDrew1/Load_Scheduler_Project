@@ -13,8 +13,8 @@
 </head>
 
 <body>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal"><a href="{% url 'detail_run' %}" class="text-dark">Summerland Express Freight</a></h5>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-success border-bottom shadow-sm">
+    <h3 class="my-0 mr-md-auto font-weight-normal"><a href="{% url 'detail_run' %}" class="text-dark">Summerland Express Freight</a></h3>
     <h6 class="p-3">User Name: {{ user }}</h6> 
     <nav class="my-2 my-md-0 mr-md-3">
       {% if user.is_authenticated %}    
@@ -32,6 +32,8 @@
 
   {% block content %}
   {% endblock %}
+
+ 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -64,6 +66,12 @@
   
 </body>
 
+<footer class="pageFooter fixed-bottom">
+
+
+  <p class="text-center">© Carl Drew 2020</p>
+
+</footer>
 
 
 </html>

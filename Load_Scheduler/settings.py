@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'bootstrap_datepicker_plus',
     'django_filters',
     'pandas',
+    'widget_tweaks',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
