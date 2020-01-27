@@ -2,10 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from .permit import permit
 import pandas as pd
+from django.conf import settings
 
 
 
-df= pd.read_csv('/Users/Carl/Downloads/Permit.csv').set_index('0')
+
+
+df= pd.read_csv('/Users/Carl/Desktop/Load_Scheduler_Project/Permit.csv').set_index('0')
 
 
 
@@ -27,20 +30,21 @@ class Runs(models.Model):
     ("BC623B","BC623B")]
     route=[("FCC","FCC"),("CHC1","CHC1"),("CHC2","CHC2"),("CHC3","CHC3"),("CHC4","CHC4"),("CHC5","CHC5"),("CHC6","CHC6"),("CCI","CCI"),	("CHIG","CHIG"),("FCI","FCI"),("CHI","CHI"),("CHI2","CHI2"),("FCD","FCD"),("CHD1","CHD1"),("CHD2","CHD2"),	
     ("CHD3","CHD3"),("CHD4","CHD4"),("CHD5","CHD5"),("CHD6","CHD6"),("CBN","CBN"),("CBN1","CBN1"),("CHN","CHN"),("CHN1","CHN1"),("CHN2","CHN2"),("FCT","FCT"),("CHT1","CHT1"),("CHT2","CHT2"),("CHW","CHW"),("CHW1","CHW1"),]
-    drivername=[("1","Aaron Boys"),("2","Allan Hunt"),("3","Allan Woodfield"),("4","Amanda Brown"),("5","Andrew Donehue"),("6","Andrew Shaw"),("7","Antoine Aulnette"),("8","Austin Aitcheson"),("9","Barry Milne"),
-    ("10","Ben Rapley"),("11","Blair Murphy"),("12","Brad Cheyne"),("13","Brian George Greer"),("14","Brian Kenworthy"),("15","Bruce Jeffries"),("16","Bruce Mclean"),("17","Carl Laffey"),
-    ("18","Charmaine Proudman"),("19","Chathura Don"),("20","Chontelle Brown"),("21","Chris Bell"),("22","Chris Erskine"),("23","Conrad Herbert"),("24","Craig Hewlett"),("25","Daniel Miller"),("26","Daniel Munro"),
-    ("27","Darrell Clark"),("28","Dave Richards"),("29","David Cross"),("30","David Dunn"),("31","David Petersen"),("32","David Woodill"),("33","Deane Rodgers"),("34","Dennis Brennan"),("35","Dion Dunlop"),("36","Duncan McCorkindale"),
-    ("37","Eden Haulage"),("38","Euan Dickie"),("39","Garry Kenton"),("40","Gary Smith"),("41","Gene Latchford"),("42","Glen Clarkson"),("43","Glen Tod"),("44","Glen Redmond"),("45","Glenn Reeves"),("46","Graeme Yianakis"),
-    ("47","Grant Robertson"),("48","Greg Hunt"),("49","Gurri Brar"),("50","Hina Hunt"),("51","Ian Tamepo"),("52","James Eggers"),("53","James Watson"),("54","Jamie Landreth"),("55","Jamie Wessels"),("56","Jan Kurak"),
-    ("57","Jarred Matheson"),("58","Jessie Wrigley"),("59","Joe Garrett"),("60","John Boulton"),("61","John Dodson-Cook"),("62","John Sayer"),("63","Kevin Ludemann"),("64","Kevin Murphy"),("65","Kym Parsons"),("66","Leigh Rout"),("67","Leon Cooze"),
-    ("68","Les Brooks"),("69","Leslie Mortimer"),("70","Lindsay Mathers"),("71","Mangaldeep Singh"),("72","Mark Rosson"),("73","Matthew Doherty"),("74","Michael Williams"),("75","Michael Cotton"),("76","Michael Currie"),("77","Michael Dennison"),
-    ("78","Michael O'reagan"),("79","Michael Scobie"),("80","Michelle Young"),("81","Morgan Perry"),("82","Neil Tomson"),("83","Nigel Johnson"),("84","Norman Ranford"),("85","Pare Pewhairangi"),("86","Paul Taiatini"),
-    ("87","Paul Tobin"),("88","Peter Donald"),("89","Peter Stringer"),("90","Phillip Askin"),("91","RDNZ - Daryl Harvey"),("92","RDNZ - Mike Reiner"),("93","RDNZ - Mike Ward"),("94","RDNZ - Nathan Smith"),("95","RDNZ - Nick Blackler"),
-    ("96","RDNZ - Phil Whitcombe"),("97","RDNZ - Sam Dampier"),("98","Rex Sharp"),("99","Ricky Rodgers"),("100","Riki Gilchrist"),("101","Rita Robinson"),("102","Robbie Dee"),("103","Robert Steven Beck"),("104","Robin Given"),
-    ("105","Ron Matthews"),("106","Ross Millard"),("107","Ross Murdoch"),("108","Russell Webb"),("109","Sachin Kapoor"),("110","Scott Hamlin"),("111","Sergey Antonov"),("112","Shaun Kincaid"),("113","Stephen Wood"),("114","Steve Day-Clarke"),
-    ("115","Steve Nelson"),("116","Steven Arps"),("117","Steven Mcara"),("118","Terry Duthie"),("119","Terry Lewis"),("120","Thomas Ruhl"),("121","Tim Mcdonald"),("122","Trevor Kelliher"),("123","Wayne Court"),("124","Wayne Redmond"),
-    ("125","Vowles Transport"),("126","Wayne Kerr"),("127","Wayne Redmond")]
+    drivername=[("Aaron Boys","Aaron Boys"),("Allan Hunt","Allan Hunt"),("Allan Woodfield","Allan Woodfield"),("Amanda Brown","Amanda Brown"),("Andrew Donehue","Andrew Donehue"),("Andrew Shaw","Andrew Shaw"),("Antoine Aulnette","Antoine Aulnette"),
+    ("Austin Aitcheson","Austin Aitcheson"),("Barry Milne","Barry Milne"),("Ben Rapley","Ben Rapley"),("Blair Murphy","Blair Murphy"),("Brad Cheyne","Brad Cheyne"),("Brian George Greer","Brian George Greer"),("Brian Kenworthy","Brian Kenworthy"),("Bruce Mclean","Bruce Mclean"),
+    ("Carl Laffey","Carl Laffey"),("Charmaine Proudman","Charmaine Proudman"),("Chontelle Brown","Chontelle Brown"),("Chris Bell","Chris Bell"),("Chris Erskine","Chris Erskine"),("Conrad Herbert","Conrad Herbert"),("Craig Hewlett","Craig Hewlett"),("Daniel Miller","Daniel Miller"),("Daniel Munro","Daniel Munro"),
+    ("Darrell Clark","Darrell Clark"),("David Cross","David Cross"),("David Dunn","David Dunn"),("David Woodill","David Woodill"),("Deane Rodgers","Deane Rodgers"),("Dennis Brennan","Dennis Brennan"),("Dion Dunlop","Dion Dunlop"),("Duncan McCorkindale","Duncan McCorkindale"),("Eden Haulage","Eden Haulage"),
+    ("Garry Kenton","Garry Kenton"),("Gary Smith","Gary Smith"),("Gene Latchford","Gene Latchford"),("Geoff Roper","Geoff Roper"),("Glen Clarkson","Glen Clarkson"),("Glen Tod","Glen Tod"),("Glen Redmond","Glen Redmond"),("Glenn Reeves","Glenn Reeves"),("Graeme Yianakis","Graeme Yianakis"),
+    ("Grant Robertson","Grant Robertson"),("Greg Hunt","Greg Hunt"),("Gurri Brar","Gurri Brar"),("Hina Hunt","Hina Hunt"),("Ian Tamepo","Ian Tamepo"),("James Eggers","James Eggers"),("James Watson","James Watson"),("Jamie Landreth","Jamie Landreth"),("Jamie Wessels","Jamie Wessels"),
+    ("Jan Kurak","Jan Kurak"),("Jarred Matheson","Jarred Matheson"),("Jessie Wrigley","Jessie Wrigley"),("Joe Garrett","Joe Garrett"),("Joe Hodge","Joe Hodge"),("Joe Maehe","Joe Maehe"),("John Boulton","John Boulton"),("John Sayer","John Sayer"),("Kevin Ludemann","Kevin Ludemann"),
+    ("Kevin Murphy","Kevin Murphy"),("Kym Parsons","Kym Parsons"),("Leigh Rout","Leigh Rout"),("Leon Cooze","Leon Cooze"),("Les Brooks","Les Brooks"),("Leslie Mortimer","Leslie Mortimer"),("Leslie Pennal","Leslie Pennal"),("Lindsay Mathers","Lindsay Mathers"),("Mangaldeep Singh","Mangaldeep Singh"),
+    ("Matthew Doherty","Matthew Doherty"),("Michael Williams","Michael Williams"),("Michael Cotton","Michael Cotton"),("Michael Currie","Michael Currie"),("Michael Dennison","Michael Dennison"),("Michael O'reagan","Michael O'reagan"),("Michael Scobie","Michael Scobie"),("Michelle Young","Michelle Young"),
+    ("Morgan Perry","Morgan Perry"),("Norman Ranford","Norman Ranford"),("Pare Pewhairangi","Pare Pewhairangi"),("Paul Taiatini","Paul Taiatini"),("Paul Tobin","Paul Tobin"),("Peter Donald","Peter Donald"),("Peter Stringer","Peter Stringer"),("Phillip Askin","Phillip Askin"),("Ravi Sharma","Ravi Sharma"),
+    ("RDNZ - Daryl Harvey","RDNZ - Daryl Harvey"),("RDNZ - Mike Reiner","RDNZ - Mike Reiner"),("RDNZ - Nathan Smith","RDNZ - Nathan Smith"),("RDNZ - Nick Blackler","RDNZ - Nick Blackler"),("RDNZ - Phil Radford","RDNZ - Phil Radford"),("RDNZ - Phil Whitcombe","RDNZ - Phil Whitcombe"),("RDNZ - Sam Dampier","RDNZ - Sam Dampier"),
+    ("Rex Sharp","Rex Sharp"),("Ricky Rodgers","Ricky Rodgers"),("Riki Gilchrist","Riki Gilchrist"),("Robbie Dee","Robbie Dee"),("Robert Keen","Robert Keen"),("Robert Steven Beck","Robert Steven Beck"),("Robin Given","Robin Given"),("Ron Matthews","Ron Matthews"),
+    ("Ross Millard","Ross Millard"),("Ross Murdoch","Ross Murdoch"),("Russell Webb","Russell Webb"),("Scott Hamlin","Scott Hamlin"),("Shaun Mills","Shaun Mills"),("Sergey Antonov","Sergey Antonov"),("Shaun Kincaid","Shaun Kincaid"),("Stephen Wood","Stephen Wood"),
+    ("Steve Day-Clarke","Steve Day-Clarke"),("Steve Nelson","Steve Nelson"),("Steven Arps","Steven Arps"),("Steven Mcara","Steven Mcara"),("Terry Duthie","Terry Duthie"),("Terry Lewis","Terry Lewis"),("Thomas Ruhl","Thomas Ruhl"),("Tim Mcdonald","Tim Mcdonald"),
+    ("Trevor Kelliher","Trevor Kelliher"),("Wayne Redmond","Wayne Redmond"),("Vowles Transport","Vowles Transport"),("Wayne Kerr","Wayne Kerr"),("Wayne Redmond","Wayne Redmond"),]
     
     run = models.CharField(choices=route, max_length=10)
     driver = models.CharField(choices=drivername,max_length=50)

@@ -1,17 +1,23 @@
 {% extends 'Runs/base.html' %}
 
+{% load crispy_forms_tags %}
 
 {% block content %}
 
 
-<div class="container pt-5">
-    <h2>Sign Up</h2>
+
+
+<h2 class="d-flex justify-content-center row-hl p-5">Sign Up</h2>
+
+<div class="d-flex justify-content-center row-hl">
+
     <form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <br>
-    <button class="btn btn-primary" type="submit">Sign Up</button>
+        {% csrf_token %}
+        {{form | crispy}}
+        <br>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
     </form>
+
 </div>
 
 
