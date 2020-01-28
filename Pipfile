@@ -16,6 +16,7 @@ django-filter = "*"
 pandas = "*"
 django-pandas = "*"
 django-widget-tweaks = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
