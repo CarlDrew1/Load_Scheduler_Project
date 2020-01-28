@@ -17,6 +17,7 @@ pandas = "*"
 django-pandas = "*"
 django-widget-tweaks = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
