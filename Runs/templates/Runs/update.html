@@ -5,18 +5,25 @@
 {% block content %}
 
 
-<div class=" container pt-3">
-  <h1 class="p-3">Update a Run</h1>
+<h1 class="d-flex justify-content-center row-hl p-3">Update Run</h1>
+<div class="d-flex justify-content-center row-hl p-3">
 
 <form action="" method="post">
 {% csrf_token %}
 
 
 <div class="row">
-  <div class="col-2">
-      {{ form.depart_time|as_crispy_field }}
-  </div>
   
+    <div class="col-3">
+      <div id="div_id_depart_time" class="form-group alert alert-danger">
+          <label for="id_depart_time" class="">
+               Actual Depart time
+          </label>
+          <div class="">
+            <input type="text" name="depart_time" class="timeinput form-control" id="id_depart_time" placeholder="HH:MM">
+           </div>
+         </div>
+        </div> 
 </div>
 
 
@@ -24,7 +31,7 @@
     <div class="col-2">
         {{ form.depart_date|as_crispy_field }}
     </div>
-    <div class="col-2">
+    <div class="col-3">
         {{ form.Planned_depart_time|as_crispy_field }}
     </div>
   </div>

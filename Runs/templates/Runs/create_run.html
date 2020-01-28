@@ -4,26 +4,26 @@
 
 {% block content %}
 
-
-<div class=" container pt-3">
-  <h1 class="p-3">Create a new Run</h1>
+<h1 class="d-flex justify-content-center row-hl p-3">Create Run</h1>
+<div class="d-flex justify-content-center row-h1 p-3">
+  
 <form action="" method="post">
 {% csrf_token %}
 
-<div class="row">
-  <div class="col-2">
+<div class="row form-group alert alert-primary">
+  <div class="col-3">
+    <h6>Planned Depart Date</h6>
       <input id='departdate' name='depart_date' placeholder="Depart Date"></input>
     </div>
-    <div class="col-2">
+    <div class="col-3">
+      <h6>Planned Depart Time</h6>
       <input id='departtime2' name='Planned_depart_time'placeholder="Planned Depart Time" ></input>
     </div>
-    <div class="col-2">
-      <input id='departtime' name='depart_time'placeholder="Depart Time" ></input>
-    </div>
+    
       
 </div>
 <br>
-<div class="row">
+<div class="row  form-group alert alert-primary">
     <div class="col-2">
       {{ form.run|as_crispy_field }}
     </div>
@@ -41,17 +41,19 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-8">
+    <div class="col-12">
       {{ form.load_comments|as_crispy_field }}
     </div>
 </div>
 <div class="row">
-    <div class="col-8">
+    <div class="col-12">
       {{ form.return_load_comments|as_crispy_field }}
     </div>
 </div>  
 <br>
-<input type='submit' value="Create Run" class='btn btn-primary'>
+
+  <input type='submit' value="Create Run" class='btn btn-primary'>
+
 </form>
 </div>
 
