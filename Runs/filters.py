@@ -1,6 +1,8 @@
 import django_filters
 from .models import Runs
 from django import forms
+import datetime
+from django.utils import timezone 
 
 
 
@@ -13,7 +15,9 @@ class filter_runs(django_filters.FilterSet):
         attrs={
             'id': 'date',
             'type': 'text',
-            'place holder': 'Depart Date',
+            'placeholder': 'Depart Date',
+            'value': datetime.datetime.now().strftime("%Y-%m-%d"),
+            
         }
     )
     )
