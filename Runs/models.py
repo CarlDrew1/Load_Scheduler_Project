@@ -8,7 +8,7 @@ from django.conf import settings
 
 
 
-df= pd.read_csv('/Users/Carl/Desktop/Load_Scheduler_Project/Permit.csv').set_index('0')
+#df= pd.read_csv('/Users/Carl/Desktop/Load_Scheduler_Project/Permit.csv').set_index('0')
 
 
 
@@ -59,6 +59,6 @@ class Runs(models.Model):
     objects = models.Manager()
     Planned_depart_time = models.TimeField()
 
-    def permit(self):
+    """ def permit(self):
         permitted = (df[self.trailer_1][self.truck])
-        return permitted 
+        return permitted  """
