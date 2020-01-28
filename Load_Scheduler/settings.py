@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g-ko58*@xfr!*r@3vx4b2uvbcyj7q215syqt2o93^ty+_ss0wm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['summerland-day-planner.herokuapp.com']
+ALLOWED_HOSTS = ['summerland-day-planner.herokuapp.com','localhost']
 
 LOGIN_URL='login'
 LOGIN_REDIRECT_URL= 'detail_run'
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
     'pandas',
     'widget_tweaks',
+    'django_pandas'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -88,8 +89,15 @@ WSGI_APPLICATION = 'Load_Scheduler.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'TESTING_DB',
+        'HOST': 'summerland.database.windows.net',
+        'USER': 'Carl_Drew',
+        'PASSWORD': 'Trucker28!',
+
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        }
     }
 }
 

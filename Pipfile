@@ -18,6 +18,11 @@ django-pandas = "*"
 django-widget-tweaks = "*"
 whitenoise = "*"
 gunicorn = "*"
+pyodbc = "*"
+django-mssql = "*"
+django-mssql-backend = "*"
+
+numpy = "*"
 
 [requires]
 python_version = "3.7"

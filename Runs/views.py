@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Runs
 from django.contrib.auth import authenticate, login
 from .filters import filter_runs
-from .permit import permit
+from .permit import permit_call
 from django.utils import timezone
 
 

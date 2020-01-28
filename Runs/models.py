@@ -1,15 +1,66 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .permit import permit
+from .permit import permit_call
 import pandas as pd
 from django.conf import settings
 
 
+from django_pandas.io import read_frame
 
 
 
 #df= pd.read_csv('/Users/Carl/Desktop/Load_Scheduler_Project/Permit.csv').set_index('0')
+class Permit(models.Model):
+        Truck =models.CharField(max_length=50)
+        H180J=models.CharField(max_length=10)
+        FC505=models.CharField(max_length=10)
+        FC503=models.CharField(max_length=10)
+        FC504=models.CharField(max_length=10)
+        M441R=models.CharField(max_length=10)
+        Q738U=models.CharField(max_length=10)
+        BC606=models.CharField(max_length=10)
+        BC606B=models.CharField(max_length=10)
+        BC604=models.CharField(max_length=10)
+        BC604B=models.CharField(max_length=10)
+        BC605=models.CharField(max_length=10)
+        BC605B=models.CharField(max_length=10)
+        BC607=models.CharField(max_length=10)
+        BC607B=models.CharField(max_length=10)
+        BC608=models.CharField(max_length=10)
+        BC608B=models.CharField(max_length=10)
+        BC602=models.CharField(max_length=10)
+        BC602B=models.CharField(max_length=10)
+        BC619=models.CharField(max_length=10)
+        BC619B=models.CharField(max_length=10)
+        BC603=models.CharField(max_length=10)
+        BC603B=models.CharField(max_length=10)
+        BC615=models.CharField(max_length=10)
+        BC615B=models.CharField(max_length=10)
+        BC620=models.CharField(max_length=10)
+        BC620B=models.CharField(max_length=10)
+        BC609=models.CharField(max_length=10)
+        BC609B=models.CharField(max_length=10)
+        FC502=models.CharField(max_length=10)
+        FC501=models.CharField(max_length=10)
+        BC614=models.CharField(max_length=10)
+        BC614B=models.CharField(max_length=10)
+        BC621=models.CharField(max_length=10)
+        BC621B=models.CharField(max_length=10)
+        BC610=models.CharField(max_length=10)
+        BC610B = models.CharField(max_length=10)
+        BC622=models.CharField(max_length=10)
+        BC622B=models.CharField(max_length=10)
+        BC623=models.CharField(max_length=10)
+        BC623B=models.CharField(max_length=10)
+       
 
+
+
+
+    
+
+qs = Permit.objects.all()
+df = read_frame(qs).set_index('Truck')
 
 
 
@@ -59,6 +110,9 @@ class Runs(models.Model):
     objects = models.Manager()
     Planned_depart_time = models.TimeField()
 
-    """ def permit(self):
+   
+    def permit_call(self):
         permitted = (df[self.trailer_1][self.truck])
-        return permitted  """
+        return permitted
+
+
