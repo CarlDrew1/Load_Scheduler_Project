@@ -9,7 +9,7 @@ from django_pandas.io import read_frame
 
 
 
-#df= pd.read_csv('/Users/Carl/Desktop/Load_Scheduler_Project/Permit.csv').set_index('0')
+
 class Permit(models.Model):
         Truck =models.CharField(max_length=50)
         H180J=models.CharField(max_length=10)
@@ -52,7 +52,7 @@ class Permit(models.Model):
         BC622B=models.CharField(max_length=10)
         BC623=models.CharField(max_length=10)
         BC623B=models.CharField(max_length=10)
-       
+        objects = models.Manager()
 
 
 
@@ -74,10 +74,10 @@ class Runs(models.Model):
     front = [("H180J","H180J"),
     ("FC505","FC505"),("FC503","FC503"),("FC504","FC504"),("M441R","M441R"),("Q738U","Q738U"),
     ("BC606","BC606"),("BC604","BC604"),("BC605","BC605"),("BC607","BC607"),("BC608","BC608"),("BC602","BC602"),("BC619","BC619"),("BC603","BC603"),("BC615","BC615"),("BC620","BC620"),("BC609","BC609"),("FC502","FC502"),
-    ("BC614","BC614"), ("BC621","BC621"),("BC610","BC610"),("BC622","BC622"),("Ole Yella","Ole Yella"),("BC623","BC623"),]
+    ("BC614","BC614"), ("BC621","BC621"),("BC610","BC610"),("BC622","BC622"),("BC623","BC623"),]
     back =[
     ("BC606B","BC606B"),("BC604B","BC604B"),("BC605B","BC605B"),("BC607B","BC607B"),("BC608B","BC608B"),("BC602B","BC602B"),("BC619B","BC619B"),("BC603B","BC603B"),
-    ("BC615B","BC615B"),("BC620B","BC620B"),("BC609B","BC609B"),("FC501","FC501"),("BC614B","BC614B"),("BC621B","BC621B"),("BC610B","BC610B"),("5Y411","5Y411"),("Ole Yellab","Ole Yellab"),("BC622B","BC622B"),
+    ("BC615B","BC615B"),("BC620B","BC620B"),("BC609B","BC609B"),("FC501","FC501"),("BC614B","BC614B"),("BC621B","BC621B"),("BC610B","BC610B"),("5Y411","5Y411"),("BC622B","BC622B"),
     ("BC623B","BC623B")]
     route=[("FCC","FCC"),("CHC1","CHC1"),("CHC2","CHC2"),("CHC3","CHC3"),("CHC4","CHC4"),("CHC5","CHC5"),("CHC6","CHC6"),("CCI","CCI"),	("CHIG","CHIG"),("FCI","FCI"),("CHI","CHI"),("CHI2","CHI2"),("FCD","FCD"),("CHD1","CHD1"),("CHD2","CHD2"),	
     ("CHD3","CHD3"),("CHD4","CHD4"),("CHD5","CHD5"),("CHD6","CHD6"),("CBN","CBN"),("CBN1","CBN1"),("CHN","CHN"),("CHN1","CHN1"),("CHN2","CHN2"),("FCT","FCT"),("CHT1","CHT1"),("CHT2","CHT2"),("CHW","CHW"),("CHW1","CHW1"),]
@@ -95,7 +95,7 @@ class Runs(models.Model):
     ("Rex Sharp","Rex Sharp"),("Ricky Rodgers","Ricky Rodgers"),("Riki Gilchrist","Riki Gilchrist"),("Robbie Dee","Robbie Dee"),("Robert Keen","Robert Keen"),("Robert Steven Beck","Robert Steven Beck"),("Robin Given","Robin Given"),("Ron Matthews","Ron Matthews"),
     ("Ross Millard","Ross Millard"),("Ross Murdoch","Ross Murdoch"),("Russell Webb","Russell Webb"),("Scott Hamlin","Scott Hamlin"),("Shaun Mills","Shaun Mills"),("Sergey Antonov","Sergey Antonov"),("Shaun Kincaid","Shaun Kincaid"),("Stephen Wood","Stephen Wood"),
     ("Steve Day-Clarke","Steve Day-Clarke"),("Steve Nelson","Steve Nelson"),("Steven Arps","Steven Arps"),("Steven Mcara","Steven Mcara"),("Terry Duthie","Terry Duthie"),("Terry Lewis","Terry Lewis"),("Thomas Ruhl","Thomas Ruhl"),("Tim Mcdonald","Tim Mcdonald"),
-    ("Trevor Kelliher","Trevor Kelliher"),("Wayne Redmond","Wayne Redmond"),("Vowles Transport","Vowles Transport"),("Wayne Kerr","Wayne Kerr"),("Wayne Redmond","Wayne Redmond"),]
+    ("Trevor Kelliher","Trevor Kelliher"),("Wayne Redmond","Wayne Redmond"),("Wayne Kerr","Wayne Kerr"),]
     
     run = models.CharField(choices=route, max_length=10)
     driver = models.CharField(choices=drivername,max_length=50)
