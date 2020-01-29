@@ -25,7 +25,7 @@ SECRET_KEY = 'g-ko58*@xfr!*r@3vx4b2uvbcyj7q215syqt2o93^ty+_ss0wm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['summerland-day-planner.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['summerland-day-planner.azurewebsites.net','localhost']
 
 LOGIN_URL='login'
 LOGIN_REDIRECT_URL= 'detail_run'
