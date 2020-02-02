@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'Load_Scheduler.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'TESTING_DB',
+        'NAME': 'Day_Planner',
         'HOST': 'summerland.database.windows.net',
         'USER': 'Carl_Drew',
         'PASSWORD': 'Trucker28!',

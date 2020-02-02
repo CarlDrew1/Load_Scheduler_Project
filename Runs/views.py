@@ -53,7 +53,7 @@ class detail_run(ListView):
 class update_run(UpdateView):
     model = Runs
     template_name ='Runs/update.html' 
-    fields = ['run','driver', 'truck','trailer_1', 'trailer_2', 'load_comments', 'return_load_comments','depart_date','depart_time','Planned_depart_time']
+    fields = ['run','driver', 'truck','trailer_1', 'trailer_2', 'load_comments', 'return_load_comments','depart_date','depart_time','Planned_depart_time','finished_loading_time']
     success_url =   reverse_lazy('detail_run')
 
     

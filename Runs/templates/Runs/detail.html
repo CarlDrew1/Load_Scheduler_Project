@@ -27,9 +27,9 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">Depart Date</th>
+            <th scope="col">Run</th>
             <th scope="col">Planned Depart Time</th>
             <th scope="col">Actual Depart Time</th>
-            <th scope="col">Run</th>
             <th scope="col">Driver</th>
             <th scope="col">Truck</th>
             <th scope="col">Trailer 1</th>
@@ -45,9 +45,9 @@
                         
           <tr>
             <th scope="row">{{ run.depart_date }}</th>
+            <td>{{ run.run }}</td>
             <td>{{ run.Planned_depart_time }}</td>
             <td>{{ run.depart_time }}</td>
-            <td>{{ run.run }}</td>
             <td>{{ run.driver }}</td>
             <td>{{ run.truck }}</td>
             <td>{{ run.trailer_1 }}</td>

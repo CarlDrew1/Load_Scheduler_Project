@@ -21,8 +21,8 @@ gunicorn = "*"
 pyodbc = "*"
 django-mssql = "*"
 django-mssql-backend = "*"
-
 numpy = "*"
+reportlab = "*"
 
 [requires]
 python_version = "3.7"
