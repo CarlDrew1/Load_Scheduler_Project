@@ -9,19 +9,14 @@ from django.utils import timezone
 
 
 class filter_runs(django_filters.FilterSet):
-    depart_date = django_filters.DateFilter(
-    
+    planning_date = django_filters.DateFilter(
     widget=forms.DateInput(
         attrs={
-            'id': 'date',
+            'id': 'plan_date',
             'type': 'text',
-            'placeholder': 'Depart Date',
-            'value': datetime.datetime.now().strftime("%Y-%m-%d"),
-            
-        }
-    )
-    )
-
+            'placeholder': 'Planning Date',
+            'value': datetime.datetime.now().strftime("%Y-%m-%d"),            
+        }))
     class Meta:
         model = Runs
-        fields = ['depart_date']
+        fields = ['planning_date']

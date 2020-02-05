@@ -122,6 +122,7 @@ class Runs(models.Model):
     objects = models.Manager()
     Planned_depart_time = models.TimeField()
     finished_loading_time = models.TimeField(null=True, blank=True)
+    planning_date = models.DateField(auto_now_add=True)
 
     def permit_call(self):
         permitted = (df[self.trailer_1][self.truck])

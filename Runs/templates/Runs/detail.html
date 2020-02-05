@@ -5,21 +5,15 @@
 
 {% block content %}
 
-
-
-
 <div class="container-fluid pt-3">
-
     <h1 class="text-center">Day Planner Summary</h1>
     <br>
-      <div class="row">
-        <div class="col-2">
+      <div class="d-flex flex-row bd-highlight mb-3">
         <form action="" method="get">
         {{filter.form}}
         <br>
         <button type="submit" class="btn btn-primary p-2">Search</button>
         </form>
-      </div>
       </div>       
     <br>
     <div class="table-responsive-lg">  
@@ -41,8 +35,7 @@
           </tr>
         </thead>
         <tbody>
-            {% for run in filter.qs %}
-                        
+            {% for run in filter.qs %}            
           <tr>
             <th scope="row">{{ run.depart_date }}</th>
             <td>{{ run.run }}</td>
@@ -56,17 +49,20 @@
             <td>{{ run.load_comments }}</td>
             <td>{{ run.return_load_comments }}</td>
             {% if user.is_authenticated %}
-            <td><a href="{% url 'update_run' run.id %}" class="btn btn-primary">Update</a> <a href="{% url 'delete_run' run.id %}" class="btn btn-danger">Delete</a> </td>
+            <td>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="{% url 'update_run' run.id %}">Update</a>
+                  <a class="dropdown-item" href="{% url 'delete_run' run.id %}">Delete</a>
+                </div>
+              </div>
+            </td>
             {% endif %}
           </tr>
           {% endfor %}
         </tbody>
       </table>
       </div>
-      
-
 </div>
-
-  
-
 {% endblock content %}
