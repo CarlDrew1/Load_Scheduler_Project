@@ -83,10 +83,12 @@ class routes(models.Model):
     route = models.CharField(max_length=6)
     objects = models.Manager()
 
+
 root = routes.objects.all()
 routedf = read_frame(root)
 routelist = list(routedf.route)
 routelisttuples = [(x , x) for x in routelist]
+
 
 class front_trailer(models.Model):
     ftrailer = models.CharField(max_length=6)
