@@ -55,6 +55,7 @@
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                   <a class="dropdown-item" href="{% url 'update_run' run.id %}">Update</a>
                   <a class="dropdown-item" href="{% url 'delete_run' run.id %}">Delete</a>
+                  <a class="dropdown-item" href="{% url 'GeneratePdf' run.id %}">Print Run Detail</a>
                 </div>
               </div>
             </td>

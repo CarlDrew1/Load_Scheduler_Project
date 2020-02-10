@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView, View
 from django.contrib.auth.forms import UserCreationForm
 from .models import Runs
 from django.contrib.auth import authenticate, login
 from .filters import filter_runs
 from .permit import permit_call
 from django.utils import timezone
+from .utils import render_to_pdf
+from django.http import HttpResponse
 
 
 
@@ -61,6 +63,18 @@ class delete_run(DeleteView):
     model = Runs
     template_name ='Runs/delete.html' 
     success_url =   reverse_lazy('detail_run')
+
+
+class GeneratePdf(View):
+    def get(self, request, *args, **kwargs):
+        """ data = {
+             'today': datetime.date.today(), 
+             'amount': 39.99,
+            'customer_name': 'Cooper Mann',
+            'order_id': 1233434,
+        } """
+        pdf = render_to_pdf('Runs/detail.html')
+        return HttpResponse(pdf, content_type='application/pdf')
 
 
 

@@ -34,6 +34,7 @@ urlpatterns = [
     path('', views.detail_run.as_view(), name='detail_run' ),
     path('schedule/<int:pk>/update', views.update_run.as_view(), name='update_run' ),
     path('schedule/<int:pk>/delete', views.delete_run.as_view(), name='delete_run' ),
+    path('schedule/<int:pk>/pdf', views.GeneratePdf.as_view(), name='GeneratePdf' ),
 ] 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
