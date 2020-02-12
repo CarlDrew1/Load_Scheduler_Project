@@ -65,17 +65,18 @@ class delete_run(DeleteView):
     success_url =   reverse_lazy('detail_run')
 
 
-class GeneratePdf(View):
-    def get(self, request, *args, **kwargs):
-        """ data = {
-             'today': datetime.date.today(), 
-             'amount': 39.99,
-            'customer_name': 'Cooper Mann',
-            'order_id': 1233434,
-        } """
-        pdf = render_to_pdf('Runs/detail.html')
+class GeneratePdf(DetailView):
+    model = Runs
+    
+   
+    def get(self, request, pk, *args, **kwargs):
+        runset = Runs.objects.get(pk=self.kwargs.get('pk'))
+        data = {
+             'runset': runset, 
+        }
+        pdf = render_to_pdf('Runs/pdf.html', data)
         return HttpResponse(pdf, content_type='application/pdf')
-
+ 
 
 
 

@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\carld\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+    "python.pythonPath": "C:\\Users\\Carl\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"

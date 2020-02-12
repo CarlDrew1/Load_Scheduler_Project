@@ -23,6 +23,10 @@ django-mssql = "*"
 django-mssql-backend = "*"
 numpy = "*"
 reportlab = "*"
+xhtml2pdf = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true

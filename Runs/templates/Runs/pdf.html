@@ -1,0 +1,39 @@
+
+
+
+
+<div class="table-responsive-lg">  
+    <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Depart Date</th>
+            <th scope="col">Run</th>
+            <th scope="col">Planned Depart Time</th>
+            <th scope="col">Actual Depart Time</th>
+            <th scope="col">Driver</th>
+            <th scope="col">Truck</th>
+            <th scope="col">Trailer 1</th>
+            <th scope="col">Trailer 2</th>
+            <th scope="col">Permitted</th>
+            <th scope="col">Load Details</th>
+            <th scope="col">Return Load</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            
+                        
+          <tr>
+            <th scope="row">{{ runset.depart_date }}</th>
+            <td>{{ runset.run }}</td>
+            <td>{{ runset.Planned_depart_time }}</td>
+            <td>{{ runset.depart_time }}</td>
+            <td>{{ runset.driver }}</td>
+            <td>{{ runset.truck }}</td>
+            <td>{{ runset.trailer_1 }}</td>
+            <td>{{ runset.trailer_2 }}</td>
+            <td>{{ runset.permit_call }}</td>
+            <td>{{ runset.load_comments }}</td>
+            <td>{{ runset.return_load_comments }}</td>
+          </td>
+          </tbody>
