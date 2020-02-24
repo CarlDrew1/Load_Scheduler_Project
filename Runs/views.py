@@ -35,7 +35,7 @@ class SignUp(CreateView):
 
 class create_run(CreateView):
     model = Runs
-    fields = ['run','driver', 'truck','trailer_1', 'trailer_2', 'load_comments', 'return_load_comments','depart_date','depart_time','Planned_depart_time']
+    fields = ['run','driver', 'truck','trailer_1', 'trailer_2', 'load_comments', 'return_load_comments','depart_date','depart_time','Planned_depart_time','foodstuffs', 'gib', 'run_details']
     template_name = 'Runs/create_run.html'
     success_url =   reverse_lazy('Table_View')
 
@@ -68,7 +68,7 @@ class detail_run(ListView):
 class update_run(UpdateView):
     model = Runs
     template_name ='Runs/update.html' 
-    fields = ['run','driver', 'truck','trailer_1', 'trailer_2', 'load_comments', 'return_load_comments','depart_date','depart_time','Planned_depart_time','finished_loading_time']
+    fields = ['run','driver', 'truck','trailer_1', 'trailer_2', 'load_comments', 'return_load_comments','depart_date','depart_time','Planned_depart_time','finished_loading_time','foodstuffs', 'gib','run_details']
     success_url =   reverse_lazy('Table_View')
 
     

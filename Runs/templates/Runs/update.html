@@ -46,10 +46,16 @@
         {{ form.Planned_depart_time|as_crispy_field }}
     </div>
   </div>
-  
 
+  <div class="row">
+    <div class="col-12">
+      {{ form.run_details|as_crispy_field }}
+    </div>
+  </div> 
+  <br>
 
 <div class="row">
+  
 
     <div class="col-2">
       {{ form.run|as_crispy_field }}
@@ -66,6 +72,14 @@
     <div class="col-2">
         {{ form.trailer_2|as_crispy_field }}
     </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    {{ form.foodstuffs|as_crispy_field }}
+  </div>
+  <div class="col-2">
+    {{ form.gib|as_crispy_field }}
+  </div>
 </div>
 <div class="row">
     <div class="col-12">

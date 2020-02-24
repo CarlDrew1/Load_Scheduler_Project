@@ -125,8 +125,11 @@ class Runs(models.Model):
     Planned_depart_time = models.TimeField()
     finished_loading_time = models.TimeField(null=True, blank=True)
     planning_date = models.DateField(auto_now_add=True)
+    foodstuffs = models.IntegerField(blank=True, default=0)
+    gib = models.DecimalField(decimal_places=1, max_digits=4, blank=True, default=0)
+    run_details = models.CharField(max_length=50, blank=True)
 
-    def permit_call(self):
+    def Unit_Permitted(self):
         permitted = (df[self.trailer_1][self.truck])
         return permitted
    
