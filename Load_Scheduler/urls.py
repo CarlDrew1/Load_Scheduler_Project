@@ -31,11 +31,11 @@ urlpatterns = [
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
     #Runs
     path('schedule/create', views.create_run.as_view(), name='create_run' ),
-    path('', views.detail_run.as_view(), name='detail_run' ),
+    path('runs/', views.detail_run.as_view(), name='detail_run' ),
     path('schedule/<int:pk>/update', views.update_run.as_view(), name='update_run' ),
     path('schedule/<int:pk>/delete', views.delete_run.as_view(), name='delete_run' ),
     path('schedule/<int:pk>/pdf', views.GeneratePdf.as_view(), name='GeneratePdf' ),
-    path('runs/', views.Table_View.as_view(), name='Table_View')
+    path('', views.Table_View.as_view(), name='Table_View')
 ] 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

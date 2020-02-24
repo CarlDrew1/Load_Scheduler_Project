@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['summerland-day-planner.azurewebsites.net','localhost']
 
 LOGIN_URL='login'
-LOGIN_REDIRECT_URL= 'detail_run'
-LOGOUT_REDIRECT_URL= 'detail_run'
+LOGIN_REDIRECT_URL= 'Table_View'
+LOGOUT_REDIRECT_URL= 'Table_View'
 
 # Application definition
 
