@@ -14,7 +14,7 @@
 
 <body>
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-dark border-bottom shadow-sm">
-    <h3 class="my-0 mr-md-auto font-weight-normal"><a href="{% url 'detail_run' %}" class="text-light">Summerland Express Freight</a></h3>
+    <h3 class="my-0 mr-md-auto font-weight-normal"><a href="{% url 'detail_run' %}" class="text-light">Summerland Express Freight - Day Planner</a></h3>
     <h6 class="p-3 text-light">User Name: {{ user }}</h6> 
     <nav class="my-2 my-md-0 mr-md-3">
       {% if user.is_authenticated %}    
@@ -69,6 +69,11 @@
         uiLibrary: 'bootstrap4', format: 'yyyy-mm-dd'
     })
   </script>
+  <script>
+    $('#id_depart_date').datepicker({
+          uiLibrary: 'bootstrap4', format: 'yyyy-mm-dd'
+      })
+    </script>
 
 
 

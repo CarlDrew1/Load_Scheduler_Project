@@ -15,8 +15,9 @@ class filter_runs(django_filters.FilterSet):
             'id': 'plan_date',
             'type': 'text',
             'placeholder': 'Planning Date',
-            'value': datetime.datetime.now().strftime("%Y-%m-%d"),            
+            # 'value': datetime.datetime.now().strftime("%Y-%m-%d"),            
         }))
     class Meta:
         model = Runs
-        fields = ['planning_date']
+        fields = ['planning_date', 'depart_date']
+

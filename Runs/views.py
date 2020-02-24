@@ -9,6 +9,10 @@ from .permit import permit_call
 from django.utils import timezone
 from .utils import render_to_pdf
 from django.http import HttpResponse
+from django_tables2 import SingleTableView
+from .tables import RunTable
+from django_filters.views import FilterView
+from django_tables2.views import SingleTableMixin
 
 
 
@@ -39,6 +43,15 @@ class create_run(CreateView):
         form.instance.user = self.request.user
         super(create_run, self).form_valid(form)
         return redirect('detail_run')
+
+
+class Table_View(SingleTableMixin,FilterView):
+    model = Runs
+    table_class = RunTable
+    template_name = 'Runs/table.html'
+
+    filterset_class = filter_runs
+
     
 
 class detail_run(ListView):
@@ -49,7 +62,7 @@ class detail_run(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filter'] = filter_runs(self.request.GET, queryset=self.get_queryset())
-        return context   
+        return context
         
 
 class update_run(UpdateView):
