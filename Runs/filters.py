@@ -13,8 +13,8 @@ class filter_runs(django_filters.FilterSet):
     widget=forms.DateInput(
         attrs={
             'id': 'plan_date',
-            'type': 'text',
-            'placeholder': 'Planning Date',
+            #'type': 'text',
+            #'placeholder': 'Planning Date',
             # 'value': datetime.datetime.now().strftime("%Y-%m-%d"),            
         }))
     class Meta:

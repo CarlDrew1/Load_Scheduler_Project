@@ -3,6 +3,8 @@ from .models import Runs
 from django_tables2.utils import A
 
 class RunTable(tables.Table):
+    depart_date = tables.DateColumn(format= 'd/m/Y')
+    planning_date = tables.DateColumn(format= 'd/m/Y')
     Update =tables.LinkColumn('update_run', text='➡', args=[A('pk')], \
                          orderable=False, empty_values=())
     Print =tables.LinkColumn('GeneratePdf', text='🖨', args=[A('pk')], \
