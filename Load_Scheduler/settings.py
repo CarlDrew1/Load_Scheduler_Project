@@ -52,9 +52,7 @@ INSTALLED_APPS = [
     
 
 ]
-WKHTMLTOPDF_CMD_OPTIONS = {
-    'quiet': True,
-}
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
