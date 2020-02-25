@@ -13,6 +13,7 @@ from django_tables2 import SingleTableView
 from .tables import RunTable
 from django_filters.views import FilterView
 from django_tables2.views import SingleTableMixin
+from wkhtmltopdf.views import PDFTemplateView
 
 
 
@@ -49,8 +50,17 @@ class Table_View(SingleTableMixin,FilterView):
     model = Runs
     table_class = RunTable
     template_name = 'Runs/table.html'
-
     filterset_class = filter_runs
+
+    def get_filterset_kwargs(self,*args):
+        kwargs = super().get_filterset_kwargs(*args)
+        if kwargs['data']:
+            bucket_filter_data = kwargs['data']
+            self.request.session['bucket_filter_data']= bucket_filter_data
+        else:
+            if 'bucket_filter_data' in self.request.session.keys():
+                kwargs['data']=self.request.session['bucket_filter_data']
+        return kwargs 
 
     
 
@@ -90,7 +100,10 @@ class GeneratePdf(DetailView):
         pdf = render_to_pdf('Runs/pdf.html', data)
         return HttpResponse(pdf, content_type='application/pdf')
  
-
+class MyPDF(PDFTemplateView):
+    filename = 'my_pdf.pdf'
+    template_name = 'Runs/pdf.html'
+    
 
 
 

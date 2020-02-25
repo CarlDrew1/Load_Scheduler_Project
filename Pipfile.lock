@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "de41ca75cb880105d47e9988fae3f884d83e8b1afbd39c0b7923563b29da169f"
+            "sha256": "17b9f72aeb0937ec5e2e2d27afdd9c25a01c796d070878f03c60bfa1dd48f028"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -125,6 +125,14 @@
             ],
             "index": "pypi",
             "version": "==1.4.5"
+        },
+        "django-wkhtmltopdf": {
+            "hashes": [
+                "sha256:add8cbf6266a28bcc3691775dbe2f2eff7934f2c7fe9995b320270f3679f12b4",
+                "sha256:e4c42d771c7a1ef85faa0591e3c1fa7da3ef0d39a636baea4a1ec89bf7119a71"
+            ],
+            "index": "pypi",
+            "version": "==3.3.0"
         },
         "gunicorn": {
             "hashes": [
@@ -359,10 +367,10 @@
         },
         "soupsieve": {
             "hashes": [
-                "sha256:bdb0d917b03a1369ce964056fc195cfdff8819c40de04695a80bc813c3cfa1f5",
-                "sha256:e2c1c5dee4a1c36bcb790e0fabd5492d874b8ebd4617622c4f6a731701060dda"
+                "sha256:e914534802d7ffd233242b785229d5ba0766a7f487385e3f714446a07bf540ae",
+                "sha256:fcd71e08c0aee99aca1b73f45478549ee7e7fc006d51b37bec9e9def7dc22b69"
             ],
-            "version": "==1.9.5"
+            "version": "==2.0"
         },
         "sqlparse": {
             "hashes": [

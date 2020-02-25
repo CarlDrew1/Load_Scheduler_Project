@@ -49,8 +49,12 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_pandas',
     'django_tables2',
-]
+    'wkhtmltopdf',
 
+]
+WKHTMLTOPDF_CMD_OPTIONS = {
+    'quiet': True,
+}
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
