@@ -19,7 +19,7 @@ from django.urls import path
 from Runs import views
 from django.conf.urls.static import static
 from django.conf import settings
-from wkhtmltopdf.views import PDFTemplateView
+
 
 
 urlpatterns = [
@@ -36,7 +36,7 @@ urlpatterns = [
     path('schedule/<int:pk>/delete', views.delete_run.as_view(), name='delete_run' ),
     path('schedule/<int:pk>/pdf', views.GeneratePdf.as_view(), name='GeneratePdf' ),
     path('', views.Table_View.as_view(), name='Table_View'),
-    path('schedule/<int:pk>/PDF/', PDFTemplateView.as_view(), name='MyPDF'),
+    
 ] 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
