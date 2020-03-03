@@ -100,12 +100,14 @@ qs = Permit.objects.all()
 df = read_frame(qs).set_index('Truck')
 df2 = read_frame(qs)
 trucklist= list(df2.Truck)
-newlis = [(x , x) for x in trucklist]
+trucklistsorted = sorted(trucklist)
+newlis = [(x , x) for x in trucklistsorted]
 
 staff = staffname.objects.all()
 staffdf = read_frame(staff)
 stafflist = list(staffdf.fullname)
-stafflisttuples = [(x , x) for x in stafflist]
+staffsort = sorted(stafflist)
+stafflisttuples = [(x , x) for x in staffsort]
 
 
 class routes(models.Model):
@@ -116,7 +118,8 @@ class routes(models.Model):
 root = routes.objects.all()
 routedf = read_frame(root)
 routelist = list(routedf.route)
-routelisttuples = [(x , x) for x in routelist]
+routelistsort = sorted(routelist)
+routelisttuples = [(x , x) for x in routelistsort]
 
 
 class front_trailer(models.Model):
@@ -126,7 +129,8 @@ class front_trailer(models.Model):
 ft = front_trailer.objects.all()
 ftdf = read_frame(ft)
 ftlist = list(ftdf.ftrailer)
-ftlisttuples = [(x , x) for x in ftlist]
+ftlistsort = sorted(ftlist)
+ftlisttuples = [(x , x) for x in ftlistsort]
 
 class back_trailer(models.Model):
     btrailer = models.CharField(max_length=6)
@@ -135,7 +139,8 @@ class back_trailer(models.Model):
 bt = back_trailer.objects.all()
 btdf = read_frame(bt)
 btlist = list(btdf.btrailer)
-btlisttuples = [(x , x) for x in btlist]
+btlistsort = sorted(btlist)
+btlisttuples = [(x , x) for x in btlistsort]
 
 
 class Runs(models.Model):
@@ -154,11 +159,11 @@ class Runs(models.Model):
     Planned_depart_time = models.TimeField()
     finished_loading_time = models.TimeField(null=True, blank=True)
     planning_date = models.DateField(auto_now_add=True)
-    foodstuffs = models.IntegerField(blank=True, default=0)
-    gib = models.DecimalField(decimal_places=1, max_digits=4, blank=True, default=0)
-    run_details = models.CharField(max_length=50, blank=True)
-    weight = models.IntegerField(blank=True, default=0)
-    cubic = models.DecimalField(decimal_places=1, max_digits=4, blank=True, default=0)
+    foodstuffs = models.IntegerField(blank=True, default=0, null=True,)
+    gib = models.DecimalField(decimal_places=1, max_digits=4, blank=True, default=0, null=True,)
+    run_details = models.CharField(max_length=50, blank=True, null=True,)
+    weight = models.IntegerField(blank=True, default=0, null=True,)
+    cubic = models.DecimalField(decimal_places=1, max_digits=4, blank=True, default=0, null=True,)
 
     def Unit_Permitted(self):
         permitted = (df[self.trailer_1][self.truck])
