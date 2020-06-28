@@ -13,6 +13,8 @@ from django_tables2 import SingleTableView
 from .tables import RunTable
 from django_filters.views import FilterView
 from django_tables2.views import SingleTableMixin
+from django.views.generic.dates import DayArchiveView
+from django_tables2.export.views import ExportMixin
 
 
 
@@ -46,11 +48,15 @@ class create_run(CreateView):
         return redirect('Table_View')
 
 
-class Table_View(SingleTableMixin,FilterView):
+class Table_View(ExportMixin, SingleTableMixin,FilterView ):
     model = Runs
     table_class = RunTable
     template_name = 'Runs/table.html'
     filterset_class = filter_runs
+    
+    
+    
+
 
     def get_filterset_kwargs(self,*args):
         kwargs = super().get_filterset_kwargs(*args)
@@ -60,7 +66,7 @@ class Table_View(SingleTableMixin,FilterView):
         else:
             if 'bucket_filter_data' in self.request.session.keys():
                 kwargs['data']=self.request.session['bucket_filter_data']
-        return kwargs 
+        return kwargs
 
     
 
@@ -99,8 +105,32 @@ class GeneratePdf(DetailView):
         }
         pdf = render_to_pdf('Runs/pdf.html', data)
         return HttpResponse(pdf, content_type='application/pdf')
- 
 
+
+class detailspdf(DetailView):
+    model = Runs
+    success_url =   reverse_lazy('Table_View')
+    
+
+
+    def get(self, request, plan_date, *args, **kwargs):
+        
+        detailset = Runs.objects.filter(planning_date = plan_date)
+        data = {
+            'detailset': detailset, 
+        }
+        pdf = render_to_pdf('Runs/detailspdf.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')
+
+       
+
+""" class export_view(SingleTableView, ExportMixin, FilterView ):
+    model = Runs
+    table_class = RunTable
+    template_name = 'Runs/table.html'
+    filterset_class = filter_runs
+    export_formats = ['csv', 'xlsx'] """
+ 
     
 
 

@@ -6,11 +6,14 @@ class RunTable(tables.Table):
     depart_date = tables.DateColumn(format= 'd/m/Y')
     planning_date = tables.DateColumn(format= 'd/m/Y')
     Update =tables.LinkColumn('update_run', text='➡', args=[A('pk')], \
-                         orderable=False, empty_values=())
+                         orderable=False, empty_values=(), exclude_from_export=True)
     Print =tables.LinkColumn('GeneratePdf', text='🖨', args=[A('pk')], \
-                         orderable=False, empty_values=())
+                         orderable=False, empty_values=(), exclude_from_export=True)
     Delete =tables.LinkColumn('delete_run', text='❌', args=[A('pk')], \
-                         orderable=False, empty_values=())                     
+                         orderable=False, empty_values=(), exclude_from_export=True)
+    export_formats = ['csv']
+    
+
     class Meta:
         model = Runs
         # template_name = "django_tables2/bootstrap4.html"

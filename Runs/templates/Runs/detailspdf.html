@@ -1,0 +1,69 @@
+
+
+
+
+
+
+
+
+
+
+<style>
+    @page {
+    size: letter landscape;
+    @frame content_frame {
+        left: 25pt;
+        width: 745pt;
+        top: 25pt;
+        height: 560pt;
+        -pdf-frame-border: 1;    /* for debugging the layout */
+    }
+    }
+    .table th, td {
+        padding: 2px;
+        text-align: center;
+        }
+</style>
+
+
+
+<div class="table">  
+    <table>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Planning Date</th>
+            <th scope="col">Run</th>
+            <th scope="col">Planned Depart Time</th>
+        
+            <th scope="col">Driver</th>
+            <th scope="col">Truck</th>
+            <th scope="col">Trailer 1</th>
+            <th scope="col">Trailer 2</th>
+
+            <th scope="col">Load Details</th>
+            <th scope="col">Return Load</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        {% for run in detailset %}
+          <tr>
+            <td >{{ run.planning_date}}</td>
+            <td>{{ run.run }}</td>
+            <td>{{ run.Planned_depart_time }}</td>
+           
+            <td>{{ run.driver }}</td>
+            <td>{{ run.truck }}</td>
+            <td>{{ run.trailer_1 }}</td>
+            <td>{{ run.trailer_2 }}</td>
+
+            <td>{{ run.load_comments }}</td>
+            <td>{{ run.return_load_comments }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      
+</div>
+
+

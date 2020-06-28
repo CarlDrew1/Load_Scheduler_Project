@@ -9,6 +9,9 @@ class staffname(models.Model):
     fullname=models.CharField(max_length=50)
     objects = models.Manager()
 
+    def __str__(self):
+        return self.fullname
+
 
 class Permit(models.Model):
         Truck =models.CharField(max_length=50)
@@ -168,5 +171,8 @@ class Runs(models.Model):
     def Unit_Permitted(self):
         permitted = (df[self.trailer_1][self.truck])
         return permitted
+
+    def __str__(self):
+        return self.run
    
 

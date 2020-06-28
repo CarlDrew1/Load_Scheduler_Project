@@ -36,6 +36,8 @@ urlpatterns = [
     path('schedule/<int:pk>/delete', views.delete_run.as_view(), name='delete_run' ),
     path('schedule/<int:pk>/pdf', views.GeneratePdf.as_view(), name='GeneratePdf' ),
     path('', views.Table_View.as_view(), name='Table_View'),
+    path('schedule/detailspdf/', views.detailspdf.as_view(),name='detailspdf'),
+    #path('schedule/csv', views.export_view.as_view(), name='export_view')
     
 ] 
 

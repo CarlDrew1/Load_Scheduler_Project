@@ -4,28 +4,54 @@
 
 <head>
     <style>
+        @page {
+        size: letter portrait;
+        @frame content_frame {
+            left: 50pt;
+            width: 512pt;
+            top: 50pt;
+            height: 692pt;
+            -pdf-frame-border: 1;    /* for debugging the layout */
+        }
+    }
+
+
     .center {
     text-align: center;
     }
+    p.one {
+    border-style: dotted;
+    border-color: red ;
+    border-width: 2px;
+    }
+    p.two{color: red;
+    }
+    .colorsafety{color:red;
+    }
+    .colorheader{color: green;
+    }
+
+
     </style>
 
 </head>
 
-<div class="center solid">
-    <h1>DRIVER RUN SHEET</h1>
-    <h1> {{ runset.depart_date }}</h1>
-    <h1>RUN: {{ runset.run_details }}</h1>
+<div class="center">
+    <h1 class="">DRIVER RUN SHEET <br>
+     {{ runset.depart_date }} <br>
+    RUN: {{ runset.run_details }}</h1>
 </div>
 
 <br>
 
-
-<h1>DEPART TIME: {{ runset.Planned_depart_time }}</h1>
-<h1>DRIVER NAME: {{ runset.driver }}</h1>
-<h1>TRUCK: {{ runset.truck }}</h1>
-<h1>TRAILER 1: {{ runset.trailer_1 }}</h1>
-<h1>TRAILER 2: {{ runset.trailer_2 }}</h1>
-<h1>IS UNIT PERMITTED: {{ runset.Unit_Permitted }}</h1>
+<h1>DRIVER NAME: {{ runset.driver }} <br>
+DEPART TIME: {{ runset.Planned_depart_time }} </h1>
+<br>
+<h1>Vehicle Details: <br>
+TRUCK: {{ runset.truck }} <br>
+TRAILER 1: {{ runset.trailer_1 }} <br>
+TRAILER 2: {{ runset.trailer_2 }} </h1>
+<h1 class="colorsafety">UNIT PERMITTED: {{ runset.Unit_Permitted }}</h1>
 <br>
 <h1>LOAD COMMENTS: {{ runset.load_comments }}</h1>
 <br>
@@ -33,23 +59,23 @@
 <br>
 <br>
 <h1>Emergency Contact Info</h1>
-<p>Christchurch: 40 Braeburn Drive - Blair Murphy 021 991 377</p>
-<p>Dunedin: 8 Kitchener Street - Dan Munro 021 991 370</p>
-<p>Cromwell: 18 Rogers Street - Shaun Kinkaid 021 334 106</p>
-<p>Invercargill: 132 Liddel Street - Mike Dennison 021 191 8170</p>
-<p>Nelson: 750 Lower Queen Drive - Mike 021 991 014</p>
-<p>Timaru: 514 Old North Road - Emma </p>
-<p>Queenstown: 210 Glenda Drive Greg 021 991 367</p>
-<p>West Coast: 58 Herbert Street - Dave Young 021 991 425S</p>
+<p class = "">Christchurch: 40 Braeburn Drive - Blair Murphy 021 991 377 <br>
+Dunedin: 8 Kitchener Street - Dan Munro 021 991 370 <br>
+Cromwell: 18 Rogers Street - Shaun Kinkaid 021 334 106 <br>
+Invercargill: 132 Liddel Street - Mike Dennison 021 191 8170 <br>
+Nelson: 750 Lower Queen Drive - Mike 021 991 014 <br>
+Timaru: 514 Old North Road - Emma <br>
+Queenstown: 210 Glenda Drive Greg 021 991 367 <br>
+West Coast: 58 Herbert Street - Dave Young 021 991 425S</p>
 
 <br>
 <br>
 <br>
 <br>
 
-<h1>Safety Message</h1>
-<h1>Please ensure you are wearing your seat belt and that you are driving to the conditions. 
-    Roads may become wet and slippery very quickly. Please be carefull out there and get home safe to your families!!</h1>
+<h1 class="colorsafety">Safety Message</h1>
+<p class="">Please ensure you are wearing your seat belt and that you are driving to the conditions. 
+    Roads may become wet and slippery very quickly. Please be carefull out there and get home safe to your families!!</p>
 
 </html>
 
