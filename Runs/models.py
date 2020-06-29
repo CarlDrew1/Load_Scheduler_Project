@@ -97,6 +97,9 @@ class Permit(models.Model):
         FC409=models.CharField(max_length=10, default='No')
         objects = models.Manager()
 
+        def __str__(self):
+            return self.Truck
+
         
 #Permit convert to DF and truck list
 qs = Permit.objects.all()
@@ -117,6 +120,9 @@ class routes(models.Model):
     route = models.CharField(max_length=6)
     objects = models.Manager()
 
+    def __str__(self):
+        return self.route
+
 
 root = routes.objects.all()
 routedf = read_frame(root)
@@ -129,6 +135,9 @@ class front_trailer(models.Model):
     ftrailer = models.CharField(max_length=6)
     objects = models.Manager()
 
+    def __str__(self):
+        return self.ftrailer
+
 ft = front_trailer.objects.all()
 ftdf = read_frame(ft)
 ftlist = list(ftdf.ftrailer)
@@ -138,6 +147,9 @@ ftlisttuples = [(x , x) for x in ftlistsort]
 class back_trailer(models.Model):
     btrailer = models.CharField(max_length=6)
     objects = models.Manager()
+
+    def __str__(self):
+        return self.btrailer
 
 bt = back_trailer.objects.all()
 btdf = read_frame(bt)

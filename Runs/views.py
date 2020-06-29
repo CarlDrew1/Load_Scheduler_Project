@@ -55,8 +55,6 @@ class Table_View(ExportMixin, SingleTableMixin,FilterView ):
     filterset_class = filter_runs
     
     
-    
-
 
     def get_filterset_kwargs(self,*args):
         kwargs = super().get_filterset_kwargs(*args)
