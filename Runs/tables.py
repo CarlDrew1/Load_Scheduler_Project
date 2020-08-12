@@ -16,7 +16,9 @@ class RunTable(tables.Table):
 
     class Meta:
         model = Runs
-        # template_name = "django_tables2/bootstrap4.html"
-        fields = ("run","run_details", "planning_date", "depart_date", "Planned_depart_time", "driver", "truck", "trailer_1", "trailer_2", "Unit_Permitted","foodstuffs", "gib", "load_comments", "return_load_comments" ,'weight', 'cubic' )
+        attrs = {'class': 'table table-sm'}
+        fields = ("run","run_details", "planning_date", "depart_date", "Planned_depart_time",\
+             "driver", "truck", "trailer_1", "trailer_2", "Unit_Permitted","foodstuffs", "gib", "load_comments", "return_load_comments" ,'weight', 'cubic' )
+    
 
     
