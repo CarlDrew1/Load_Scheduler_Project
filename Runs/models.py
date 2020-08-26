@@ -186,7 +186,7 @@ routelisttuples = [(x , x) for x in routelistsort]
 
 
 class front_trailer(models.Model):
-    ftrailer = models.CharField(max_length=6)
+    ftrailer = models.CharField(max_length=12)
     objects = models.Manager()
 
     def __str__(self):
@@ -199,7 +199,7 @@ ftlistsort = sorted(ftlist)
 ftlisttuples = [(x , x) for x in ftlistsort]
 
 class back_trailer(models.Model):
-    btrailer = models.CharField(max_length=6)
+    btrailer = models.CharField(max_length=12)
     objects = models.Manager()
 
     def __str__(self):

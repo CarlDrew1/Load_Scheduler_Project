@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="{% static 'custom.css' %}" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="{% static 'myfavicon.ico' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -52,34 +53,46 @@
 
   <script>
     $('#departdate').datepicker({
-        uiLibrary: 'bootstrap4',format: 'yyyy-mm-dd'
+      uiLibrary: 'bootstrap4',format: 'yyyy-mm-dd'
     });
   </script>
   <script>
     $('#departtime').timepicker({
-        uiLibrary: 'bootstrap4'
+      uiLibrary: 'bootstrap4'
     });
   </script>
   <script>
     $('#departtime2').timepicker({
-        uiLibrary: 'bootstrap4',
-    });
+      uiLibrary: 'bootstrap4',
+      });
   </script>
   <script>
   $('#plan_date').datepicker({
-        uiLibrary: 'bootstrap4', format: 'yyyy-mm-dd'
-    })
+      uiLibrary: 'bootstrap4', format: 'yyyy-mm-dd'
+      })
   </script>
   <script>
     $('#id_depart_date').datepicker({
-          uiLibrary: 'bootstrap4', format: 'yyyy-mm-dd'
+      uiLibrary: 'bootstrap4', format: 'yyyy-mm-dd'
       })
-    </script>
-      <script>
-        $('#id_Planned_depart_time').timepicker({
-            uiLibrary: 'bootstrap4',
-        });
-      </script>
+  </script>
+  <script>
+    $('#id_Planned_depart_time').timepicker({
+      uiLibrary: 'bootstrap4',
+      });
+  </script>
+  <script>
+    $(document).ready(function() {
+    $("#btnFetch").click(function() {
+    // disable button
+    $(this).prop("disabled", false);
+    // add spinner to button
+    $(this).html(
+    '<i class="fa fa-circle-o-notch fa-spin"></i> loading...'
+    );
+    });
+    });
+  </script>
 
 
 
