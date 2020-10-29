@@ -20,15 +20,18 @@
 {% if user.is_authenticated %}
 <div class="container-fluid pt-3">
 
+
+
     
 
 
 {% if filter %}
     <form action="" method="get" class="form form-inline">
+
         {% bootstrap_form filter.form layout='inline' %}
         {% bootstrap_button 'Search' %}
         <a class="btn btn-primary ml-1" href="{% export_url 'csv' %}">Export Runs</a>
-
+    
         
     </form>
     
@@ -37,7 +40,7 @@
 
 
 <br>
-
+ 
 
 {% render_table table 'django_tables2/bootstrap4.html' %}
 
