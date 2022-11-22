@@ -28,7 +28,7 @@ lazy-object-proxy==1.6.0; python_version >= '2.7' and python_version not in '3.0
 mccabe==0.6.1
 numpy==1.19.0
 pandas==1.0.5
-pillow==8.3.2
+pillow==9.3.0
 pylint-django==2.0.15
 pylint-plugin-utils==0.6
 pylint==3.0.0a4; python_version ~= '3.6'
